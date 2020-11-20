@@ -18,11 +18,10 @@ function indexOf(array, value) {
 
 console.log(indexOf([2,3,1,4,3,5,6,8,9,10,98,122,111,190,476,90,92,99,10], 99));
 
-
 let operationBinarySearch = 0;
 function binarySearch(array, value, start, end) {
    //Lets  stop execution if  
-   console.log(start, end)
+   //console.log(start, end)
    if(start == (end-1))
    {
     //console.log("ENDED!");
@@ -33,7 +32,7 @@ function binarySearch(array, value, start, end) {
     //sort the array in ascending order first
     array.sort((a, b)=> a - b);
     let  middlePoint = Math.floor((start + end) / 2);
-    console.log("middlePoint:" + middlePoint);
+    //console.log("middlePoint:" + middlePoint);
    //Lets check if the value we're looking for is in the middlePoint index
    if (value == array[middlePoint])
    {
@@ -67,5 +66,10 @@ function binarySearch(array, value, start, end) {
 ]*/
 //console.log([2,3,1,4,3,5,6,8,9,10,98,122,111,190,476,90,92,99,10].sort((a,b)=>a-b));
 //console.log([2,3,1,4,3,5,6,8,9,10,98,122,111,190,476,90,92,99,10].sort((a, b)=> b - a));
-const arr = [2,3,1,4,5,6,8,9,10,98,122,111,190,476,90,92,99];
-console.log(binarySearch(arr, 4, 0, arr.length));
+
+//From analysis, the time it takes for an input size of 8 is 3 unit of time and an input size of 17 is 7 unit of time
+//Time complexity is 0LogN
+const arr1 = [2,3,1,4,5,6,8,9];
+console.log("Index for 4 is: "+binarySearch(arr1, 4, 0, arr1.length));
+const arr2 = [2,3,1,4,5,6,8,9,10,98,122,111,190,476,90,92,99];
+console.log("Index for 4 is: "+binarySearch(arr2, 4, 0, arr2.length));
