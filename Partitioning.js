@@ -1,11 +1,4 @@
-let A = [10,16,8,12,15,6,3,9,5];
 
-function swap(a, i, j)
-{
-    let temp = a[i];
-    a[i] = a[j];
-    a[j] = temp;
-}
 function PartitionArray(a, start, end)
 {
     //We take the last element in the array as pivot and store its index
@@ -26,25 +19,16 @@ function PartitionArray(a, start, end)
     return a;
 }
 
-function QuickSort(a, start, end)
+
+let A = [10,16,8,12,15,6,3,9,5];
+
+function swap(a, i, j)
 {
-    //console.log(end);
-    //Lets first partition the array the first time which will use the last index for pivot (8)
-    let partitioned = PartitionArray(a, start, end);
-    //Lets decrement by 1 so that we can recursively select a new pivot as the last index
-    end--;
-    //if end has decremented until start
-    if(end == start)
-    {
-        //Then we return the partitioned array
-        return partitioned;
-    }
-    //we return the functions
-    return QuickSort(partitioned, start, end)
-   
+    let temp = a[i];
+    a[i] = a[j];
+    a[j] = temp;
 }
 
-//console.log(QuickSort(A, 0, A.length));
 
 function PartitionArrayB(a, start, end)
 {
@@ -67,10 +51,33 @@ function PartitionArrayB(a, start, end)
         //console.log(a[j]); 
     }
     while (a[j] > pivot);
-    if(i < j) swap(a, i, j);
-    
+    if(i < j) 
+    {
+        swap(a, i, j);
     }
     
-    return a;
+    }
+    swap(a, start, j);
+    return j;
 }
-console.log(PartitionArrayB(A, 0, A.length));
+
+function QuickSort(start, end)
+{
+    //console.log("start:"+start + "end:"+end);
+    //We only want to recursively call the function only when start is less than end
+    if(start <  end)
+    { 
+    let partitionIndex = PartitionArrayB(A, start, end);
+    //Lets partition from start until the partitionIndex
+    QuickSort(start, partitionIndex);
+    //Lets partition from partitionIndex+1 until the end
+    QuickSort(partitionIndex+1, end);
+    }
+    
+}
+
+//console.log(QuickSort(A, 0, A.length));
+
+PartitionArrayB(A, 0, A.length);
+QuickSort(0, A.length);
+console.log(A);
