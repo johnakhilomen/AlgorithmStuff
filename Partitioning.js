@@ -1,4 +1,4 @@
-let A = [7,2,1,8,6,3,5,4];
+let A = [10,16,8,12,15,6,3,9,5];
 
 function swap(a, i, j)
 {
@@ -8,8 +8,11 @@ function swap(a, i, j)
 }
 function PartitionArray(a, start, end)
 {
+    //We take the last element in the array as pivot and store its index
     let pivotIndex = end - 1;
+    //Lets grab the pivot 
     let pivot = a[pivotIndex];
+    //let i start at start - 1 
     let i = start - 1;
     for (let j = start; j < pivotIndex; j++)
     {
@@ -36,9 +39,38 @@ function QuickSort(a, start, end)
         //Then we return the partitioned array
         return partitioned;
     }
-    //console.log(end);
     //we return the functions
     return QuickSort(partitioned, start, end)
+   
 }
 
-console.log(QuickSort(A, 0, A.length));
+//console.log(QuickSort(A, 0, A.length));
+
+function PartitionArrayB(a, start, end)
+{
+    let pivotIndex = start;
+    let pivot = a[pivotIndex];
+    let i = pivotIndex;
+    let j = end;
+    while (i < j)
+    {
+        //Lets increment i after pivot until we find an item less than pivot
+    do 
+    {
+        i++;
+        //console.log(a[i]); 
+    }
+    while (a[i] < pivot);
+    do 
+    {
+        j--;
+        //console.log(a[j]); 
+    }
+    while (a[j] > pivot);
+    if(i < j) swap(a, i, j);
+    
+    }
+    
+    return a;
+}
+console.log(PartitionArrayB(A, 0, A.length));
