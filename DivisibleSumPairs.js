@@ -1,6 +1,6 @@
-//let A = [1,2,3,4,5,6]; k =5
+let A = [1,2,3,4,5,6]; k =5
 //let A = [1,3,2,6,1,2]; k = 3
-let A = [8, 10];
+//let A = [8, 10]; k = 2
 
 function checkDivisibleBy5(A, start, end, k)
 {
