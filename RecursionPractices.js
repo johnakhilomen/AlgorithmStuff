@@ -58,3 +58,21 @@ function Test(n)
 }
 Test(5);
 Test(10);
+
+
+let x = 0;
+function sumOfArray(N, A)
+{
+  if(N < 1)
+  {
+    return x;
+  }
+  else
+  {
+    N--;
+    x += A[N];
+    return sumOfArray(N, A);
+  }
+}
+
+console.log(sumOfArray(4, [85, 23, 12, 9]));
