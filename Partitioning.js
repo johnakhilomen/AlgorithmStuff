@@ -20,7 +20,7 @@ function PartitionArray(a, start, end)
 }
 
 
-let A = [10,16,8,12,15,6,3,9,5];
+
 
 function swap(a, i, j)
 {
@@ -77,7 +77,9 @@ function QuickSort(start, end)
 }
 
 //console.log(QuickSort(A, 0, A.length));
-
-PartitionArrayB(A, 0, A.length);
-QuickSort(0, A.length);
-console.log(A);
+let A = [8,7,1,9,11,5,6];
+let B = [6,91,32,17,30,15,44,31];
+//console.log(PartitionArray(A, 0, A.length));
+console.log(PartitionArray(B, 0, B.length));
+//QuickSort(0, A.length);
+//console.log(A);

@@ -20,8 +20,6 @@ function mergeSort (unsortedArray) {
   
   
   
-  
-  
   // Merge the two arrays: left and right
   function merge (left, right) {
     let resultArray = [], leftIndex = 0, rightIndex = 0;
