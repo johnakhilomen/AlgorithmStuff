@@ -32,6 +32,8 @@ function removeduplicatedArray_(A) {
     // }
     // result[A[i]] += 1;
     // OR
+    //result[A[i]] = (result[A[i]] === undefined ? 0 : 1) + 1;
+    // OR
     /*
     if "(result[A[i]])" condition is not met then it continues to set result[A[i]] = 0 (|| 0 syntax)
     But if result[A[i]] is defined and has it's default value 0, then we can continue
