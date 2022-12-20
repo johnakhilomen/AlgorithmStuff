@@ -21,6 +21,7 @@ function meanderArray(unsorted) {
   let output = [];
 
   for (let i = 0; i < sorted.length / 2; i++) {
+    console.log(sorted.length - 1 - i);
     output.push(sorted[i]);
     if (i !== sorted.length - 1 - i) {
       output.push(sorted[sorted.length - 1 - i]);
